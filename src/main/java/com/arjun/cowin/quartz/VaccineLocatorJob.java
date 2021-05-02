@@ -1,4 +1,4 @@
-package com.arjun.cowin.Quartz;
+package com.arjun.cowin.quartz;
 
 
 import com.arjun.cowin.config.AppProperties;

@@ -1,6 +1,6 @@
 package com.arjun.cowin;
 
-import com.arjun.cowin.Quartz.QuartzScheduler;
+import com.arjun.cowin.quartz.QuartzScheduler;
 import com.arjun.cowin.config.AppProperties;
 import com.arjun.cowin.http.RestClient;
 import com.arjun.cowin.service.VaccineLocatorService;
