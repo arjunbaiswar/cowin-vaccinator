@@ -41,7 +41,7 @@ public class VaccineLocatorService {
                 if (cowinResponse != null && CollectionUtils.isNotEmpty(cowinResponse.getSessions())) {
                     List<CowinResponse.VaccinationCenter> vaccinationCenters = cowinResponse.getSessions();
                     availableCenters.addAll(vaccinationCenters.stream()
-                            .filter(vaccinationCenter -> vaccinationCenter.getMin_age_limit() > 18 && vaccinationCenter.getAvailable_capacity() > 5)
+                            .filter(vaccinationCenter -> vaccinationCenter.getMin_age_limit() == 18 && vaccinationCenter.getAvailable_capacity() > 5)
                             .collect(Collectors.toList()));
                 }
             }
