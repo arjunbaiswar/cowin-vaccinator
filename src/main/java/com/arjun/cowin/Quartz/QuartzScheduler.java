@@ -1,5 +1,6 @@
 package com.arjun.cowin.Quartz;
 
+import com.arjun.cowin.config.AppProperties;
 import com.arjun.cowin.service.VaccineLocatorService;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
@@ -33,7 +34,7 @@ public class QuartzScheduler {
                 .withIdentity("vaccine-locator", "universal")
                 .build();
         job.getJobDataMap().put("vaccineLocatorService", vaccineLocatorService);
-        scheduleJob(job, "vaccine-locator", "universal", "0 0/1 * * * ?");
+        scheduleJob(job, "vaccine-locator", "universal", AppProperties.INSTANCE.getString("frequency"));
     }
 
     public void scheduleJob(JobDetail job, String name, String group, String cronExp) throws SchedulerException {
